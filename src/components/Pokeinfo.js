@@ -12,7 +12,9 @@ class Pokeinfo extends React.Component{
 
         this.state = {
             pokeName: '',
-            pokeImg: ''
+            pokeImg: '',
+            pokeType1: '',
+            pokeType2: ''
         }
     }
 
@@ -20,11 +22,17 @@ class Pokeinfo extends React.Component{
         fetch('https://pokeapi.co/api/v2/pokemon/charizard')
         .then((data) => data.json())
         .then((pokemon) => {
+            console.log(pokemon.types[1]);
             this.setState({
               pokeName: pokemon.name,
-              pokeImg: pokemon.sprites.front_default
+              pokeImg: pokemon.sprites.front_default,
+              pokeType1: pokemon.types[0].type.name
             })
-            console.log(pokemon.name, pokemon.sprites.front_default)
+            if(pokemon.types[1] != null){
+                this.setState({
+                    pokeType2: pokemon.types[1].type.name,
+                })
+            }
         })
         .catch((err) => {
             console.error(err);
@@ -101,7 +109,9 @@ class Pokeinfo extends React.Component{
                     </div>
                 </div>
                 <div className='pokeinfo'>
-                    <p>{this.state.pokeName}</p>
+                    <h1>{this.state.pokeName.charAt(0).toUpperCase() + this.state.pokeName.slice(1)}</h1>
+                    <p>{this.state.pokeType1}</p>
+                    <p>{this.state.pokeType2}</p>
                     <img src={this.state.pokeImg} />
                 </div>
             </div>
