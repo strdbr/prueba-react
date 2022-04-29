@@ -16,7 +16,12 @@ header{
     background-color: red;
     justify-content: space-between;
     align-items: center;
+
     nav{
+        #toggle{
+            display: none;
+            //opacity: 0;
+        }
         ul{
             padding: 0;
             margin: 0;
@@ -31,6 +36,81 @@ header{
             color: white;
         }
     }
+      @media (max-width: 1015px) {
+        #toggle {
+            opacity: 0;
+          }
+          #toggle:checked + .botonBurguer > span {
+            transform: rotate(45deg);
+          }
+          #toggle:checked + .botonBurguer > span::before {
+            top: 0;
+            transform: rotate(0deg);
+          }
+          #toggle:checked + .botonBurguer > span::after {
+            top: 0;
+            transform: rotate(90deg);
+          }
+          #toggle:checked ~ .menuLateral {
+            right: 0 !important;
+          }
+          .botonBurguer {
+            position: fixed;
+            align-items: center;
+            top: 20px;
+            right: 20px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 1;
+          }
+          .botonBurguer > span,
+          .botonBurguer > span::before,
+          .botonBurguer > span::after {
+            display: block;
+            align-items: stretch;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition-duration: .25s;
+          }
+          .botonBurguer > span::before {
+            content: '';
+            top: -8px;
+          }
+          .botonBurguer > span::after {
+            content: '';
+            top: 8px;
+          }
+        .menuLateral {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: #e43333;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+            transition-duration: .25s;
+          }
+          .item {
+            display: block;
+            padding: 12px 24px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition-duration: .25s;
+          }
+          .item:hover {
+            background-color: #CFD8DC;
+          }
+      }
 }
 
 .botonFlotante{
