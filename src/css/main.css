@@ -6,7 +6,7 @@
 html {
   font-family: 'Nunito', sans-serif;
 }
-
+/* Estilos del navbar y menu de hamburguesa */
 header {
   position: fixed;
   display: -webkit-box;
