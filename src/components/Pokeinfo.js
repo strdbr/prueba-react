@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/main.css'
 import upperCase from '../functions/upperCase'
 import typesImg from '../functions/typesImg'
+import colorBackground from '../functions/colorBackground'
 
 const apiData ={
     apiUrl: 'https://pokeapi.co/api/v2/',
@@ -132,11 +133,18 @@ class Pokeinfo extends React.Component{
                     </div>
                 </div>
                 <div className='pokeinfo'>
-                    <h1>{upperCase(this.state.pokeName)}</h1>
-                    <p>{this.state.pokeNum}</p>
-                    <p>{typesImg(this.state.pokeType1)}</p>
-                    <p>{typesImg(this.state.pokeType2)}</p>
-                    <img src={this.state.pokeImg} />
+                    <div className='pokeImg'>
+                        <img src={this.state.pokeImg} className='sprite' style={colorBackground(this.state.pokeType1)}/>
+                    </div>
+                    <div className='pokeData'>
+                        <div className='pokeName'>
+                            <h1>{upperCase(this.state.pokeName)} | #{this.state.pokeNum}</h1>
+                        </div>
+                        <div className='types'>
+                            <span>{typesImg(this.state.pokeType1)}</span>
+                            <span>{typesImg(this.state.pokeType2)}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
