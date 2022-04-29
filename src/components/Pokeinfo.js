@@ -82,10 +82,7 @@ class Pokeinfo extends React.Component{
     regx = new RegExp("^([^0-9]*)$");
     ingresaNombre = (e) => {
         e.preventDefault();
-        
-        console.log(this.miNombre.current.value);
-        console.log(this.regx.test(this.miNombre.current.value));
-        if (this.regx.test(this.miNombre.current.value) == true){
+        if (this.regx.test(this.miNombre.current.value) === true){
             const url = apiData.apiUrl + apiData.endpoint + this.miNombre.current.value.toLowerCase();
             fetch(url)
                 .then((data) => data.json())
@@ -136,7 +133,7 @@ class Pokeinfo extends React.Component{
                 </div>
                 <div className='pokeinfo'>
                     <div className='pokeImg'>
-                        <img src={this.state.pokeImg} className='sprite' style={colorBackground(this.state.pokeType1)}/>
+                        <img src={this.state.pokeImg} className='sprite' style={colorBackground(this.state.pokeType1)} alt='Pokemon'/>
                     </div>
                     <div className='pokeData'>
                         <div className='pokeName'>
@@ -149,8 +146,8 @@ class Pokeinfo extends React.Component{
                         </div>
                     </div>
                 </div>
-                <a href='#' className='botonFlotante'>
-                    <img src={this.state.pokeImg} className='botonSimbolo'/>
+                <a href='/#' className='botonFlotante'>
+                    <img src={this.state.pokeImg} className='botonSimbolo' alt='Pokemon'/>
                 </a>
             </div>
         )
