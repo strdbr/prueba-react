@@ -18,7 +18,8 @@ class Pokeinfo extends React.Component{
             pokeImg: '',
             pokeNum: '',
             pokeType1: '',
-            pokeType2: ''
+            pokeType2: '',
+            pokeWeight: ''
         }
     }
 
@@ -26,11 +27,13 @@ class Pokeinfo extends React.Component{
         fetch('https://pokeapi.co/api/v2/pokemon/charizard')
         .then((data) => data.json())
         .then((pokemon) => {
+            console.log(pokemon);
             this.setState({
               pokeName: pokemon.name,
               pokeImg: pokemon.sprites.front_default,
               pokeNum: pokemon.id,
-              pokeType1: pokemon.types[0].type.name
+              pokeType1: pokemon.types[0].type.name,
+              pokeWeight: pokemon.weight
             })
             if(pokemon.types[1] != null){
                 this.setState({
@@ -81,10 +84,11 @@ class Pokeinfo extends React.Component{
     regx = new RegExp("^([^0-9]*)$");
     ingresaNombre = (e) => {
         e.preventDefault();
+        
         console.log(this.miNombre.current.value);
         console.log(this.regx.test(this.miNombre.current.value));
         if (this.regx.test(this.miNombre.current.value) == true){
-            const url = apiData.apiUrl + apiData.endpoint + this.miNombre.current.value;
+            const url = apiData.apiUrl + apiData.endpoint + this.miNombre.current.value.toLowerCase();
             fetch(url)
                 .then((data) => data.json())
                 .then((pokemon) => {
@@ -143,9 +147,13 @@ class Pokeinfo extends React.Component{
                         <div className='types'>
                             <span>{typesImg(this.state.pokeType1)}</span>
                             <span>{typesImg(this.state.pokeType2)}</span>
+                            <span> | <b>Weight: {this.state.pokeWeight}</b></span>
                         </div>
                     </div>
                 </div>
+                <a href='#' className='botonFlotante'>
+                    <img src={this.state.pokeImg} className='botonSimbolo'/>
+                </a>
             </div>
         )
     }

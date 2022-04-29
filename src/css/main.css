@@ -9,11 +9,67 @@ html {
 
 header {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   top: 0;
   left: 0;
   height: 50px;
   width: 100%;
   background-color: red;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 1.5rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.botonFlotante {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0C9;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 3px #999;
+          box-shadow: 2px 2px 3px #999;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.botonFlotante:hover {
+  -webkit-box-shadow: 0px 6px 8px -3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 6px 8px -3px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.botonSimbolo {
+  -webkit-filter: brightness(0.9) invert(0.7) sepia(0.5) hue-rotate(100deg) saturate(200%);
+          filter: brightness(0.9) invert(0.7) sepia(0.5) hue-rotate(100deg) saturate(200%);
+  margin-top: 10%;
+  width: 50px;
+  height: 50px;
 }
 
 .pokeball {
@@ -56,18 +112,19 @@ div .flexbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 100px;
 }
 
 div .pokeinfo {
+  margin-left: 100px;
   padding: 15px;
   border: 2px solid red;
   border-radius: 25px;
@@ -75,6 +132,15 @@ div .pokeinfo {
   width: 10%;
   height: 450px;
   min-width: 400px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+@media (max-width: 1015px) {
+  div .pokeinfo {
+    margin-right: 100px;
+  }
 }
 
 div .pokeinfo span {
@@ -116,22 +182,35 @@ div .pokeinfo .pokeData div {
 }
 
 div .pokeSearch {
+  margin-right: 100px;
   padding: 10px;
   border: 2px solid blue;
   border-radius: 25px;
   margin-top: 100px;
-  width: 100%;
+  width: 400px;
   height: 450px;
-  min-width: 200px;
+  min-width: 250px;
 }
 
-@media (min-width: 450px) {
-  div .pokeSearch h2 {
-    font-size: 0.5rem;
+@media (max-width: 375px) {
+  div .pokeSearch {
+    margin-left: 100%;
   }
 }
 
-@media (min-width: 800px) {
+@media (max-width: 1015px) {
+  div .pokeSearch {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 413px) {
+  div .pokeSearch h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1015px) {
   div .pokeSearch h2 {
     font-size: 1.2rem;
   }
@@ -185,11 +264,39 @@ div .pokeSearch button {
 div .pokeSearch button:hover {
   -webkit-box-shadow: 0px 6px 8px -3px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 6px 8px -3px rgba(0, 0, 0, 0.3);
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 div .pokeSearch button:focus {
   outline: none;
+}
+
+.tab h1 {
+  text-align: center;
+}
+
+.tab .generaciones {
+  width: 100%;
+}
+
+.tab .generaciones button {
+  width: 12.5%;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #007142fd;
+  color: white;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-appearance: none;
+}
+
+.tab .generaciones button:hover, .tab .generaciones button:focus {
+  background: #00a0d1;
 }
 /*# sourceMappingURL=main.css.map */

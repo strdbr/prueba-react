@@ -7,6 +7,13 @@ const Navbar = () => {
         <span className='logo'>
             <img src='../img/pokeball.png' className='pokeball'/>
         </span>
+        <nav>
+          <ul>
+            <li><a href='#'>Inicio</a></li>
+            <li><a href='#'>Pokemon</a></li>
+            <li><a href='#'>Contacto</a></li>
+          </ul>
+        </nav>
     </header>
   )
 }
