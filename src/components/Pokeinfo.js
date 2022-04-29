@@ -24,10 +24,9 @@ class Pokeinfo extends React.Component{
     }
 
     componentDidMount(){
-        fetch('https://pokeapi.co/api/v2/pokemon/charizard')
+        fetch('https://pokeapi.co/api/v2/pokemon/' + Math.round(Math.random() * (898 - 1) + 1))
         .then((data) => data.json())
         .then((pokemon) => {
-            console.log(pokemon);
             this.setState({
               pokeName: pokemon.name,
               pokeImg: pokemon.sprites.front_default,
@@ -49,7 +48,6 @@ class Pokeinfo extends React.Component{
     miNumero = React.createRef();
     ingresaNumero = (e) => {
         e.preventDefault();
-        console.log(this.miNumero.current.value);
         if(this.miNumero.current.value > 0 && this.miNumero.current.value <= 898){
             const url = apiData.apiUrl + apiData.endpoint + this.miNumero.current.value;
             fetch(url)
@@ -116,7 +114,7 @@ class Pokeinfo extends React.Component{
         else {
             alert('Este campo solo acepta texto sin numeros');
         }
-        }
+    }
 
     render (){
         return(

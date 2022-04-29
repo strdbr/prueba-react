@@ -9,8 +9,8 @@ const Navbar = () => {
         </span>
         <div className='hamburger-menu'>
           <nav>
-            <input id="toggle" type="checkbox" />
-            <label class="botonBurguer" for="toggle">
+            <input id='toggle' type='checkbox' />
+            <label className='botonBurguer' htmlFor='toggle'>
               <span></span>
             </label>
             <ul className='menuLateral'>
