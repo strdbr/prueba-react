@@ -6,7 +6,7 @@
 html {
   font-family: 'Nunito', sans-serif;
 }
-/* Estilos del navbar y menu de hamburguesa */
+
 header {
   position: fixed;
   display: -webkit-box;
@@ -23,6 +23,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10;
 }
 
 header nav #toggle {
@@ -203,9 +204,9 @@ div .flexbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -214,36 +215,14 @@ div .flexbox {
   margin-bottom: 100px;
 }
 
-@media (max-width: 1015px) {
-  div .flexbox {
-    margin-left: 20%;
-  }
-}
-
-@media (max-width: 1015px) {
-  div .space {
-    margin-left: 100px;
-  }
-}
-
 div .pokeinfo {
-  margin-left: 100px;
   padding: 15px;
   border: 2px solid red;
   border-radius: 25px;
   margin-top: 100px;
-  width: 10%;
-  height: 450px;
-  min-width: 400px;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-}
-
-@media (max-width: 1015px) {
-  div .pokeinfo {
-    margin-right: 0px;
-  }
 }
 
 div .pokeinfo span {
@@ -285,26 +264,11 @@ div .pokeinfo .pokeData div {
 }
 
 div .pokeSearch {
-  margin-right: 100px;
   padding: 10px;
   border: 2px solid blue;
   border-radius: 25px;
   margin-top: 100px;
-  width: 400px;
-  height: 450px;
   min-width: 250px;
-}
-
-@media (max-width: 375px) {
-  div .pokeSearch {
-    margin-left: 100%;
-  }
-}
-
-@media (max-width: 1015px) {
-  div .pokeSearch {
-    margin-left: 100px;
-  }
 }
 
 @media (min-width: 413px) {

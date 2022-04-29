@@ -16,6 +16,7 @@ header{
     background-color: red;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 
     nav{
         #toggle{
@@ -160,32 +161,32 @@ header{
 div{
     .flexbox{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: stretch;
         flex-wrap: wrap;
         margin-bottom: 100px;
         @media (max-width: 1015px) {
-            margin-left: 20%;
+            //margin-left: 20%;
           }
     }
 
     .space{
         @media (max-width: 1015px) {
-            margin-left: 100px;
+            //margin-left: 100px;
           }
     }
     .pokeinfo{
-        margin-left: 100px;
+        //margin-left: 100px;
         @media (max-width: 1015px) {
-            margin-right: 0px;
+            //margin-right: 0px;
           }
         padding: 15px;
         border: 2px solid red;
         border-radius: 25px;
         margin-top: 100px;
-        width: 10%;
-        height: 450px;
-        min-width: 400px;
+        //width: 10%;
+        //height: 450px;
+        //min-width: 400px;
         align-items: stretch;
         span{
             align-items: center;
@@ -217,19 +218,19 @@ div{
     }
 
     .pokeSearch{
-        margin-right: 100px;        
+        //margin-right: 100px;        
         @media (max-width: 375px) {
-            margin-left: 100%;
+            //margin-left: 100%;
           }
         @media (max-width: 1015px) {
-            margin-left: 100px;
+            //margin-left: 100px;
           }
         padding: 10px;
         border: 2px solid blue;
         border-radius: 25px;
         margin-top: 100px;
-        width: 400px;
-        height: 450px;
+        //width: 400px;
+        //height: 450px;
         min-width: 250px;
         h2{
             @media (min-width: 413px) {
