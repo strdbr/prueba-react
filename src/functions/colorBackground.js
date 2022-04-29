@@ -37,7 +37,8 @@ function(type){
             return({backgroundColor:'#808080'})
         case 'water':
             return({backgroundColor:'#128cff'})
-                
+        default:
+            return({backgroundColor:'#FFFFFF'})    
     }
 }
 

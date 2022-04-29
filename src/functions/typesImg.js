@@ -37,7 +37,8 @@ function(type){
             return(<img src='../img/steel.png' alt='steel' />)
         case 'water':
             return(<img src='../img/water.png' alt='water' />)
-                
+        default:
+            return('No hay tipo')
     }
 }
 
