@@ -1,3 +1,6 @@
+/*
+    Funcion para cambiar el color del fondo por tipo de Pokemon
+*/
 const colorBackground =
 function(type){
     switch(type){

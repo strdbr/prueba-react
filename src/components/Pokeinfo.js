@@ -22,7 +22,9 @@ class Pokeinfo extends React.Component{
             pokeWeight: ''
         }
     }
-
+    /*
+        Genera un numero aleatorio entre los Pokemons para el estado inicial
+    */
     componentDidMount(){
         fetch('https://pokeapi.co/api/v2/pokemon/' + Math.round(Math.random() * (898 - 1) + 1))
         .then((data) => data.json())
@@ -45,6 +47,9 @@ class Pokeinfo extends React.Component{
         })
     }
 
+    /*
+        Funcion para buscar Pokemons por numero
+    */
     miNumero = React.createRef();
     ingresaNumero = (e) => {
         e.preventDefault();
@@ -78,6 +83,9 @@ class Pokeinfo extends React.Component{
         }
     }
 
+    /*
+        Funcion para buscar Pokemons por nombre
+    */
     miNombre = React.createRef();
     regx = new RegExp("^([^0-9]*)$");
     ingresaNombre = (e) => {
@@ -116,7 +124,7 @@ class Pokeinfo extends React.Component{
     render (){
         return(
             <div className='flexbox'>
-                <div>
+                <div className='space'>
                     <div className='pokeSearch'>
                         <h1>¡Ingresa un Pokemon!</h1>
                         <form onSubmit={this.ingresaNumero}>

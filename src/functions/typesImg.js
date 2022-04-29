@@ -1,3 +1,6 @@
+/*
+    Funcion para cambiar los tipos de Pokemon por imagenes
+*/
 const typesImg =
 function(type){
     switch(type){

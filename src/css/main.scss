@@ -164,12 +164,20 @@ div{
         align-items: stretch;
         flex-wrap: wrap;
         margin-bottom: 100px;
+        @media (max-width: 1015px) {
+            margin-left: 20%;
+          }
     }
 
+    .space{
+        @media (max-width: 1015px) {
+            margin-left: 100px;
+          }
+    }
     .pokeinfo{
         margin-left: 100px;
         @media (max-width: 1015px) {
-            margin-right: 100px;
+            margin-right: 0px;
           }
         padding: 15px;
         border: 2px solid red;
